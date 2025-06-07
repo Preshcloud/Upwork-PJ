@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UpWork Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #14a800;
+      font-size: 28px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #14a800;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: #f0fff4;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      max-width: 800px;
+      color: #222;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .hero button {
+      background-color: #14a800;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #0f8f00;
+      transform: translateY(-3px);
+    }
+
+    .categories, .search-filters, .signup-login {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .categories h3, .search-filters h3, .signup-login h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card h4 {
+      color: #14a800;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .search-filters input[type="text"],
+    .signup-login input[type="text"],
+    .signup-login input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-filters button,
+    .signup-login button {
+      background: #14a800;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-filters button:hover,
+    .signup-login button:hover {
+      background: #0f8f00;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UpWorkClone</h1>
+    <nav>
+      <a href="#">Find Talent</a>
+      <a href="#">Find Work</a>
+      <a href="#">Why Us</a>
+      <a href="#signup">Sign Up</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Find the right freelance services for your business</h2>
+    <p>Connect with top talent and get work done—faster.</p>
+    <button>Get Started</button>
+  </section>
+
+  <section class="search-filters">
+    <h3>Search Freelancers</h3>
+    <input type="text" placeholder="Search by skill or job title">
+    <button>Search</button>
+  </section>
+
+  <section class="categories">
+    <h3>Explore Categories</h3>
+    <div class="category-grid">
+      <div class="category-card">
+        <h4>Web Development</h4>
+        <p>Frontend, Backend, Full Stack</p>
+      </div>
+      <div class="category-card">
+        <h4>Design & Creative</h4>
+        <p>UI/UX, Graphic Design, Branding</p>
+      </div>
+      <div class="category-card">
+        <h4>Writing</h4>
+        <p>Copywriting, Content Writing, Technical Writing</p>
+      </div>
+      <div class="category-card">
+        <h4>Marketing</h4>
+        <p>SEO, Email Marketing, Ads</p>
+        <p>&#11088; 4.8</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup-login" id="signup">
+    <h3>Sign Up</h3>
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Sign Up</button>
+  </section>
+
+  <section class="signup-login" id="login">
+    <h3>Login</h3>
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 UpWorkClone. Created for demo purposes only.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UpWork</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f9f9f9;
+      height:auto;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+       position: sticky; top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #080808;
+      font-size: 28px;
+    }
+
+    nav a {
+      margin-right: 80px;
+      text-decoration: none;
+      color: rgb(14, 13, 13);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #14a800;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      background-image: url(./Untitled\ design\ \(1\).png);
+      color: #ddd;
+      animation: fadeIn 1.5s ease;
+      position: relative;
+    border-radius: 8px;
+    background-size: cover;
+    
+    }
+    .hero{
+  padding: 15px; 
+  background-color: #25c977; 
+  border-radius: 8px;        
+  text-align:left;  
+  color: #fff;
+        
+    }
+
+  .image-container img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+    
+
+    .hero h2 {
+      font-size: 48px;
+      max-width: 800px;
+      color:whitesmoke;
+      padding-right: 400px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color:black;
+      margin: 20px 0;
+    }
+
+    .hero button {
+      background-color: #14a800;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #0f8f00;
+    }
+
+    .categories {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .categories h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card h4 {
+      color: #14a800;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+    .search-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 700px;
+      color: white;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #888;
+      border-radius: 30px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .toggle-buttons button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-buttons .active {
+      
+      color:white;
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 30px;
+      padding: 5px 10px;
+      margin-bottom: 15px;
+    }
+
+    .search-input input {
+      border: none;
+      flex: 1;
+      padding: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-input button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      margin-left: 8px;
+      cursor: pointer;
+      
+    }
+.Dee{
+  text-decoration:underline;
+  text-decoration-color: #0f8f00;
+}
+    .logos {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    .logos img {
+      height: 30px;
+      max-width: 80px;
+      filter: grayscale(-1%) brightness(200%);
+    }
+.skills-section {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skills-heading {
+      flex: 1;
+      color: #ccc;
+      font-size: 24px;
+      line-height: 1.6;
+    }
+    .skills-heading :hover{
+      color: #14a800;
+      
+    }
+    
+
+    .skills-columns {
+      flex: 2;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skills-columns ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-columns li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .skills-columns li:hover {
+      color: #2e8bff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    .footer {
+    background: #111;
+    color: #ddd;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 15px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+    color: #ccc;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color:white;
+    transition: width 0.3s ease;
+  }
+
+  .footer-column ul li a:hover {
+    color: #fff;
+  }
+
+  .footer-column ul li a:hover::after {
+    width: 100%;
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .footer-social p {
+    margin: 0 10px 10px 0;
+  }
+
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #aaa;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    color: #14a800;
+  }
+
+  .app-icons span {
+    font-size: 22px;
+    margin-left: 15px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    color: #666;
+    margin: 50px;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    color: #888;
+    margin: 0 10px;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .footer-links a:hover {
+    color:white;
+  }
+
+  @media (max-width: 600px) {
+    .footer-social {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .app-icons {
+      margin-top: 10px;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+   
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UpWork</h1>
+    <nav>
+        <strong>
+      <a href="#">Find Talent</a>
+      <a href="#">Find Work</a>
+      <a href="#">Why Us</a>
+      <a href="#">Login</a>
+      </strong>
+  </div>
+  <div class="search-input">
+<input type="search" style="width: 200px;" placeholder="Search...">
+    <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+  </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+    <h2>Connecting clients in need to freelancers who deliver</h2>
+    <p>Connect with top talent and get work done—faster.</p>
+  
+    </div>
+  
+    <br/>
+    <div class="search-box">
+  <div class="toggle-buttons">
+    <button class="active" onclick="toggle(this)">Find talent</button>
+    <button onclick="toggle(this)">Browse jobs</button>
+  </div>
+
+  <div class="search-input">
+    <input type="text" placeholder="Search by role, skills, or keywords" />
+    <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+  </div>
+
+  <div class="logos">
+    <img src="./MS.png" alt="Microsoft">
+    <img src="./air bnb.png" alt="Airbnb">
+    <img src="./Bissel.png" alt="Bissell">
+    <img src="./G door.webp" alt="Glassdoor">
+  </div>
+</div>
+</section>
+
+<script>
+  function toggle(button) {
+    document.querySelectorAll('.toggle-buttons button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  }
+
+  function search() {
+    const input = document.querySelector('.search-input input').value;
+    alert("Searching for: " + input);
+  }
+</script>
+
+  </section>
+
+
+  <section class="categories">
+    <h3>Browse talented Catergories</h3>
+    <h4 style="color: rgb(106, 119, 133);">Looking for work?<a class="Dee" href="#"> <span  style="color: #0f8f00; text-decoration: none;">Browse jobs</span></a></h4>
+    <div class="category-grid">
+      <div class="category-card">
+        <strong><h4>Development & IT</h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.85/5 </P>
+        <p>1853 skills</p></strong>
+      </div>
+      
+      <div class="category-card">
+       <strong> <h4>AI Service</h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.8/5 </P>
+        <p>294 skills</p></strong>
+      </div>
+    
+      <div class="category-card">
+       <strong> <h4>Design & Creative</h4>
+        <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.91/5 </P>
+        <p>968 skills</p>
+       </strong>
+      </div>
+    
+      <div class="category-card">
+       <strong> <h4>Writing & Translation</h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.92/5 </P>
+        <p>505 skills</p></strong>
+      </div>
+    
+      <div class="category-card">
+       <strong> <h4>Admin & Customer Support </h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.77/5 </P>
+         <p>508 skills</p>
+        </strong>
+      </div>
+      
+      <div class="category-card">
+       <strong> <h4>Finance & Accounting </h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.79/5 </P>
+         <p>214 skills</p>
+         </strong>
+      </div>
+    
+    
+      <div class="category-card">
+       <strong> <h4>Engineering & Architecture</h4>
+         <P><span style="color: #0f8f00;"><i class="fa-solid fa-star"></i></span> 4.85/5 </P>
+         <p>650 skills</p>
+        </strong>
+      </div>
+    
+    </div>
+    <section>
+    <div class="skills-section">
+    <div class="skills-heading">
+      <p><strong>Top skills
+        Trending skills</strong><br>
+      Top skills in US<br>
+      Project Catalog™</p>
+    </div>
+
+    <div class="skills-columns">
+      <ul>
+        <li>Data Entry Specialists</li>
+        <li>Video Editors</li>
+        <li>Data Analyst</li>
+        <li>Shopify Developer</li>
+        <li>Ruby on Rails Developer</li>
+        <li>Android Developer</li>
+        <li>Bookkeeper</li>
+        <li>Content Writer</li>
+        <li>Copywriter</li>
+        <li>Data Scientist</li>
+        <li>Front-End Developer</li>
+        <li>Game Developer</li>
+        <li>Graphic Designer</li>
+        <li>iOS Developer</li>
+      </ul>
+
+      <ul>
+        <li>Logo Designer</li>
+        <li>Mobile App Developer</li>
+        <li>PHP Developer</li>
+        <li>Python Developer</li>
+        <li>Resume Writer</li>
+        <li>SEO Expert</li>
+        <li>Social Media Manager</li>
+        <li>Software Developer</li>
+        <li>Software Engineer</li>
+        <li>Technical Writer</li>
+        <li>UI Designer</li>
+        <li>UX Designer</li>
+        <li>Virtual Assistant</li>
+      </ul>
+    </div>
+  </section>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+ <h4>For Clients</h4>
+      <ul>
+        <li><a href="#">How to hire</a></li>
+        <li><a href="#">Talent Marketplace</a></li>
+        <li><a href="#">Project Catalog</a></li>
+        <li><a href="#">Hire an agency</a></li>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Business Plus</a></li>
+        <li><a href="#">Any Hire</a></li>
+        <li><a href="#">Contract-to-hire</a></li>
+        <li><a href="#">Direct Contracts</a></li>
+        <li><a href="#">Hire worldwide</a></li>
+        <li><a href="#">Hire in the USA</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>For Talent</h4>
+      <ul>
+        <li><a href="#">How to find work</a></li>
+        <li><a href="#">Direct Contracts</a></li>
+        <li><a href="#">Find freelance jobs worldwide</a></li>
+        <li><a href="#">Find freelance jobs in the USA</a></li>
+        <li><a href="#">Win work with ads</a></li>
+        <li><a href="#">Exclusive resources with Freelancer Plus</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Help & support</a></li>
+        <li><a href="#">Success stories</a></li>
+        <li><a href="#">Upwork reviews</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Affiliate programme</a></li>
+        <li><a href="#">Free Business Tools</a></li>
+        <li><a href="#">Release notes</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Investor relations</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Our impact</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Trust, safety & security</a></li>
+        <li><a href="#">Modern slavery statement</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <p>Follow us</p>
+    <div class="social-icons">
+      <a href="#"><span><i class="fa-sharp fa-solid fa-book"></i></span></a>
+      <a href="#"><span><i class="fa-solid fa-suitcase"></i></span></a>
+      <a href="#"><span><i class="fa-brands fa-x-twitter"></i></span></a>
+      <a href="#"><span><i class="fa-brands fa-youtube"></i></span></a>
+      <a href="#"><span><i class="fa-solid fa-camera"></i></span></a>
+    </div>
+    <div class="app-icons">
+      <span><i class="fa-solid fa-apple-whole"></i></span> <span><i class="fa-solid fa-robot"></i></span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2015 - 2025 Upwork® Global Inc.</p>
+    <div class="footer-links">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">CA Notice at Collection</a>
+      <a href="#">Cookie Settings</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
